@@ -4,6 +4,8 @@ class DonutMaker {
         this._donutCount = 0;
         this._autoClickerCount = 0;
         this._autoClickerCost = 100;
+        this._donutMultiplierCount = 0;
+        this._donutMultiplierCost = 10;
 
     }
 
@@ -25,13 +27,26 @@ class DonutMaker {
         } else {
             this._autoClickerCount++;
         }
+
         this._donutCount -=100;
-        
+
         this._autoClickerCost += .1 * this._autoClickerCost;
     }
 
     activateAutoClickers(){
         this._donutCount += this._autoClickerCount;
+    }
+
+    purchaseDonutMultiplier(){
+        if(this._donutCount < this._donutMultiplierCost){
+            this._donutMultiplierCount;
+        } else {
+            this._donutMultiplierCount++; 
+        }
+       
+        this._donutCount -= 10;
+
+        this._donutMultiplierCost += .1 * this._donutMultiplierCost;
     }
 
 

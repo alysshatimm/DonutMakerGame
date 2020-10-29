@@ -78,3 +78,32 @@ describe('The amount of Auto Clickers affect the amount of donuts added when cli
         expect(underTest._donutCount).toBe(110);
     })
 })
+describe('Be able to purchase first Donut Multiplier with 10 donuts', () =>{
+    let underTest;
+
+    beforeEach(() =>{
+        underTest = new DonutMaker;
+    })
+    it('Can retrieve and add to the Donut Multiplier Count by spending 10 donuts', () =>{
+        underTest._donutCount = 20;
+        underTest.purchaseDonutMultiplier();
+        expect(underTest._donutCount).toBe(10);
+    })
+})
+describe('The cost of each Donut Multipler should go up with each purchase', () =>{
+    let underTest;
+
+    beforeEach(() =>{
+        underTest = new DonutMaker;
+    })
+    it('Donut Multipler cost increases by 10% with each purchase', () =>{
+        underTest._donutCount = 50;
+        underTest.purchaseDonutMultiplier();
+        expect(underTest._donutMultiplierCost).toBe(11);
+    })
+    it('Will not sell Donut Multiplier if not enough Donuts banked', () =>{
+        underTest._donutCount= 5;
+        underTest.purchaseDonutMultiplier();
+        expect(underTest._donutMultiplierCount).toBe(0)
+    })
+})
