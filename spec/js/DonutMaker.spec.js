@@ -104,6 +104,25 @@ describe('The cost of each Donut Multipler should go up with each purchase', () 
     it('Will not sell Donut Multiplier if not enough Donuts banked', () =>{
         underTest._donutCount= 5;
         underTest.purchaseDonutMultiplier();
-        expect(underTest._donutMultiplierCount).toBe(0)
+        expect(underTest._donutMultiplierCount).toBe(0);
+    })
+})
+describe('Donut Multipliers increase donut count by 1.2x', () =>{
+    let underTest;
+
+    beforeEach(() =>{
+        underTest = new DonutMaker;
+    })
+    it('First Donut Multiplier should increase value of a click 1.2x', () =>{
+        underTest._donutCount= 10;
+        underTest._donutMultiplierCount= 1;
+        underTest.recordClick();
+        expect(underTest._donutCount).toBe(11.2);
+    })
+    it('The amount of subsequent Donut Multipliers click bonus will go up exponentially', () =>{
+        underTest._donutCount= 10;
+        underTest._donutMultiplierCount= 3;
+        underTest.recordClick();
+        expect(underTest._donutCount).toBe();
     })
 })

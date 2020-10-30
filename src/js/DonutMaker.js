@@ -10,7 +10,14 @@ class DonutMaker {
     }
 
     recordClick(){
-       this._donutCount++;
+        if(this._donutMultiplierCount === 1){
+            this._donutCount += 1.2; 
+        // if(this._donutMultiplierCount > 1){
+        //     this._donutCount += Math.pow(1.2, this._donutMultiplierCount);
+        // }    
+        } else {
+        this._donutCount++;   
+        }
     }
 
     get retrieveDonutCount(){
@@ -29,7 +36,7 @@ class DonutMaker {
         }
 
         this._donutCount -=100;
-
+        
         this._autoClickerCost += .1 * this._autoClickerCost;
     }
 
