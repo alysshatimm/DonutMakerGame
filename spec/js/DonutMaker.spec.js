@@ -123,6 +123,20 @@ describe('Donut Multipliers increase donut count by 1.2x', () =>{
         underTest._donutCount= 10;
         underTest._donutMultiplierCount= 3;
         underTest.recordClick();
-        expect(underTest._donutCount).toBe();
+        expect(underTest._donutCount).toBe(11.728);
+    })
+})
+describe('Donut Multiplier click bonus will apply to clicks from Auto Clicker', () =>{
+    let underTest;
+
+    beforeEach(() =>{
+        underTest = new DonutMaker;
+    })
+    it('When an Auto Clicker is added, increase the value of each Auto Clicker by the amount of Donut Multiplier', () =>{
+        underTest._donutCount= 10;
+        underTest._donutMultiplierCount= 4;
+        underTest._autoClickerCount= 2;
+        underTest.activateAutoClickers();
+        expect(underTest._donutCount).toBe(14.1472);
     })
 })
