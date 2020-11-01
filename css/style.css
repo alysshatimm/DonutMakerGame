@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=VT323&display=swap');
+h1, h2, h3 {
+    font-family: 'VT323', monospace;
+}
+header{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+aside{
+    font-family: 'Ubuntu', sans-serif;
+    
+
+}
+
+.left, .right{
+    background-color: rgba(204, 85, 231, 0.205);
+}
+
+.center{
+    background-color: rgba(76, 182, 201, 0.342);
+}
+
+.container{
+    
+}
