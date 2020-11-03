@@ -1,5 +1,6 @@
 class DonutMaker {
 
+
     constructor(){
         this._donutCount = 0;
         this._autoClickerCount = 0;
@@ -32,11 +33,13 @@ class DonutMaker {
             this._autoClickerCount;
             this._donutCount;
         } else if(this._donutCount > this._autoClickerCost){
-            this._autoClickerCount++;
+            ++this._autoClickerCount;
             this._donutCount -=100;
         } 
-
-        this._autoClickerCost += .1 * this._autoClickerCost;
+        if(this._autoClickerCount>1){
+         this._autoClickerCost += .1 * this._autoClickerCost;   
+        } 
+        
     }
 
     activateAutoClickers(){
@@ -62,6 +65,8 @@ class DonutMaker {
 }
 
 export { DonutMaker }
+
+
 
 
 
