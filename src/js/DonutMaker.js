@@ -36,7 +36,7 @@ class DonutMaker {
         if(this._donutCount < this._autoClickerCost){
             this._autoClickerCount;
             this._donutCount;
-        } else if(this._donutCount > this._autoClickerCost){
+        } else if(this._donutCount >= this._autoClickerCost){
             ++this._autoClickerCount;
             this._donutCount -=100;
         } 
@@ -58,11 +58,13 @@ class DonutMaker {
     purchaseDonutMultiplier(){
         if(this._donutCount < this._donutMultiplierCost){
             this._donutMultiplierCount;
-        } else {
-            this._donutMultiplierCount++; 
+            this._donutCount;
+        } else if(this._donutCount >= this._donutMultiplierCount) {
+            ++this._donutMultiplierCount; 
+            this._donutCount -= 10;
         }
        
-        this._donutCount -= 10;
+        
 
         this._donutMultiplierCost += .1 * this._donutMultiplierCost;
     }
