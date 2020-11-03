@@ -43,3 +43,15 @@ aside, footer{
     border-radius: 20%;
     opacity: .8;
 }
+
+.clicker-button:disabled {
+    background: #797373a2;
+    border-radius: 20%;
+    
+}
+
+.multiplier-button:disabled {
+    background: #797373a2;
+    border-radius: 20%;
+    
+}

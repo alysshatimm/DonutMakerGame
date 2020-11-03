@@ -6,20 +6,24 @@ const newDonutMaker = new DonutMaker();
 
 const updatePlayerInfo = function (donutMaker) {
     const donuts = document.querySelector(".donut-count");
-    donuts.innerText = `DONUT COUNT: ${donutMaker.retrieveDonutCount}`; 
+    donuts.innerText = `YOU'VE BAKED ${donutMaker.retrieveDonutCount} DONUTS!`; 
     // refactor "retrieveDonutCount" to just "donutCount" in future iteration if time
     
     const clickers = document.querySelector(".auto-clicker-count");
-    clickers.innerText = `AUTO-CLICKER COUNT: ${donutMaker.retrieveAutoClickerCount}`;
+    clickers.innerText = `YOU HAVE ${donutMaker.retrieveAutoClickerCount} AUTO-CLICKERS`;
 
     const multipliers = document.querySelector(".multiplier-count");
-    multipliers.innerText = `DONUT MULTIPLIER COUNT: ${donutMaker.retrieveDonutMultiplierCount}`;
+    multipliers.innerText = `YOU HAVE ${donutMaker.retrieveDonutMultiplierCount} DONUT MULTIPLIERS`;
 
     const clickerCost = document.querySelector(".clicker-cost");
     clickerCost.innerText= `Auto-Clicker Costs ${donutMaker.autoClickerCost} donuts to purchase`;
 
     const multiplierCost = document.querySelector(".multiplier-cost");
     multiplierCost.innerText = `Donut Multiplier Costs ${donutMaker.donutMultiplierCost} donuts to purchase`;
+
+    disableAutoClickerButton(donutMaker);
+
+    disableDonutMultiplierButton(donutMaker);
 };
 
 updatePlayerInfo(newDonutMaker);
@@ -41,4 +45,24 @@ const buyMultipliers = document.querySelector(".multiplier-button");
 buyMultipliers.addEventListener("click", () => {
     newDonutMaker.purchaseDonutMultiplier();
     updatePlayerInfo(newDonutMaker);
-})
+});
+
+function disableAutoClickerButton(donutMaker){
+    const autoClickerButton = document.querySelector(".clicker-button");
+    autoClickerButton.disabled = true;
+    if(donutMaker.autoClickerCost > donutMaker.retrieveDonutCount){
+        autoClickerButton.disabled = true;
+    } else if(donutMaker.autoClickerCost <= donutMaker.retrieveDonutCount){
+        autoClickerButton.disabled = false;
+    }
+}
+
+function disableDonutMultiplierButton(donutMaker){
+    const donutMultiplierButton = document.querySelector(".multiplier-button");
+    donutMultiplierButton.disabled = true;
+    if(donutMaker.donutMultiplierCost > donutMaker.retrieveDonutCount){
+        donutMultiplierButton.disabled = true;
+    } else if(donutMaker.donutMultiplierCost <= donutMaker.retrieveDonutCount){
+        donutMultiplierButton.disabled = false;
+    }
+}
