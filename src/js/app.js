@@ -14,6 +14,12 @@ const updatePlayerInfo = function (donutMaker) {
 
     const multipliers = document.querySelector(".multiplier-count");
     multipliers.innerText = `DONUT MULTIPLIER COUNT: ${donutMaker.retrieveDonutMultiplierCount}`;
+
+    const clickerCost = document.querySelector(".clicker-cost");
+    clickerCost.innerText= `Auto-Clicker Costs ${donutMaker.autoClickerCost} donuts to purchase`;
+
+    const multiplierCost = document.querySelector(".multiplier-cost");
+    multiplierCost.innerText = `Donut Multiplier Costs ${donutMaker.donutMultiplierCost} donuts to purchase`;
 };
 
 updatePlayerInfo(newDonutMaker);

@@ -10,16 +10,6 @@ class DonutMaker {
 
     }
 
-    recordClick(){
-        if(this._donutMultiplierCount === 1){
-            this._donutCount += 1.2; 
-        }else if(this._donutMultiplierCount > 1){
-            this._donutCount += Math.pow(1.2, this._donutMultiplierCount);   
-        } else {
-        this._donutCount++;   
-        }
-    }
-
     get retrieveDonutCount(){
         return this._donutCount;
     }
@@ -32,6 +22,24 @@ class DonutMaker {
         return this._donutMultiplierCount;
     }
 
+    get autoClickerCost(){
+        return this._autoClickerCost;
+    }
+
+    get donutMultiplierCost(){
+        return this._donutMultiplierCost;
+    }
+
+    recordClick(){
+        if(this._donutMultiplierCount === 1){
+            this._donutCount += 1.2; 
+        }else if(this._donutMultiplierCount > 1){
+            this._donutCount += Math.pow(1.2, this._donutMultiplierCount);   
+        } else {
+        this._donutCount++;   
+        }
+    }
+
     purchaseAutoClicker(){
         if(this._donutCount < this._autoClickerCost){
             this._autoClickerCount;
@@ -40,14 +48,14 @@ class DonutMaker {
             ++this._autoClickerCount;
             this._donutCount -=100;
         } 
-        if(this._autoClickerCount > 1){
+        
+
          this._autoClickerCost += .1 * this._autoClickerCost;   
         } 
         
-    }
+    
 
     activateAutoClickers(){
-        
         if(this._donutMultiplierCount >= 1){
             this._donutCount += (Math.pow(1.2, this._donutMultiplierCount)) * this._autoClickerCount;
         }else {
