@@ -23,19 +23,19 @@ class DonutMaker {
         return this._donutCount;
     }
 
-    retrieveAutoClickerCount(){
-        this._autoClickerCount;
+    get retrieveAutoClickerCount(){
+        return this._autoClickerCount;
     }
 
     purchaseAutoClicker(){
         if(this._donutCount < this._autoClickerCost){
             this._autoClickerCount;
-        } else {
+            this._donutCount;
+        } else if(this._donutCount > this._autoClickerCost){
             this._autoClickerCount++;
-        }
+            this._donutCount -=100;
+        } 
 
-        this._donutCount -=100;
-        
         this._autoClickerCost += .1 * this._autoClickerCost;
     }
 
@@ -59,9 +59,9 @@ class DonutMaker {
 
         this._donutMultiplierCost += .1 * this._donutMultiplierCost;
     }
-
-
 }
+
+export { DonutMaker }
 
 
 
