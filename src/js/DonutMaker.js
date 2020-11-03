@@ -28,6 +28,10 @@ class DonutMaker {
         return this._autoClickerCount;
     }
 
+    get retrieveDonutMultiplierCount(){
+        return this._donutMultiplierCount;
+    }
+
     purchaseAutoClicker(){
         if(this._donutCount < this._autoClickerCost){
             this._autoClickerCount;
@@ -36,7 +40,7 @@ class DonutMaker {
             ++this._autoClickerCount;
             this._donutCount -=100;
         } 
-        if(this._autoClickerCount>1){
+        if(this._autoClickerCount > 1){
          this._autoClickerCost += .1 * this._autoClickerCost;   
         } 
         

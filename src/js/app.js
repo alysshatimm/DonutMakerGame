@@ -11,6 +11,9 @@ const updatePlayerInfo = function (donutMaker) {
     
     const clickers = document.querySelector(".auto-clicker-count");
     clickers.innerText = `AUTO-CLICKER COUNT: ${donutMaker.retrieveAutoClickerCount}`;
+
+    const multipliers = document.querySelector(".multiplier-count");
+    multipliers.innerText = `DONUT MULTIPLIER COUNT: ${donutMaker.retrieveDonutMultiplierCount}`;
 };
 
 updatePlayerInfo(newDonutMaker);
@@ -25,5 +28,11 @@ const buyClickers = document.querySelector(".clicker-button");
 buyClickers.addEventListener("click", () => {
     newDonutMaker.purchaseAutoClicker();
     newDonutMaker.activateAutoClickers();
+    updatePlayerInfo(newDonutMaker);
+});
+
+const buyMultipliers = document.querySelector(".multiplier-button");
+buyMultipliers.addEventListener("click", () => {
+    newDonutMaker.purchaseDonutMultiplier();
     updatePlayerInfo(newDonutMaker);
 })
