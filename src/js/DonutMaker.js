@@ -57,11 +57,7 @@ class DonutMaker {
     activateAutoClickers() {
         if (this._donutMultiplierCount >= 1) {
             this._donutCount += (Math.pow(1.2, this._donutMultiplierCount)) * this._autoClickerCount;
-            // const autoClick = document.querySelector(".donut-button");
-
-            // setInterval(function(){
-            // autoClick.click();
-            // },3000);
+           
         } else {
             this._donutCount += this._autoClickerCount;
            
@@ -69,12 +65,14 @@ class DonutMaker {
         }
 
     automaticallyClick() {
-        if(this._autoClickerCount > 0){
+        if(this._autoClickerCount >= 1){
             const autoClick = document.querySelector(".donut-button");
 
             setInterval(function(){
             autoClick.click();
             },3000);
+        } else if(this._autoClickerCount === 0){
+            clearInterval(autoClick);
         }
     }
       

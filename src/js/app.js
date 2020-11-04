@@ -34,6 +34,21 @@ const updatePlayerInfo = function (donutMaker) {
 updatePlayerInfo(newDonutMaker);
 const makeDonuts = document.querySelector(".donut-button");
 
+const resetGame = document.querySelector(".reset-button");
+resetGame.addEventListener("click", () => {
+    if(confirm("Heck this! I'm outta here!")) {
+        newDonutMaker._donutCount = 0;
+        newDonutMaker._autoClickerCount = 0;
+        newDonutMaker._autoClickerCost = 100;
+        newDonutMaker._donutMultiplierCount = 0;
+        newDonutMaker._donutMultiplierCost = 10;
+        console.log(newDonutMaker.retrieveAutoClickerCount);
+        updatePlayerInfo(newDonutMaker);
+    } else {
+        return null;
+    }
+});
+
 makeDonuts.addEventListener("click", () => {
     newDonutMaker.recordClick();
     updatePlayerInfo(newDonutMaker);
@@ -53,19 +68,7 @@ buyMultipliers.addEventListener("click", () => {
     updatePlayerInfo(newDonutMaker);
 });
 
-const resetGame = document.querySelector(".reset-button");
-resetGame.addEventListener("click", () => {
-    if(confirm("Heck this! I'm outta here!")) {
-        newDonutMaker._donutCount = 0;
-        newDonutMaker._autoClickerCount = 0;
-        newDonutMaker._autoClickerCost = 100;
-        newDonutMaker._donutMultiplierCount = 0;
-        newDonutMaker._donutMuliplierCost = 10;
-        updatePlayerInfo(newDonutMaker);
-    } else {
-        return null;
-    }
-});
+
 
 function disableAutoClickerButton(donutMaker){
     const autoClickerButton = document.querySelector(".clicker-button");
