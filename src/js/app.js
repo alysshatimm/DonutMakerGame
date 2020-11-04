@@ -2,7 +2,7 @@ import {
     DonutMaker
 } from "/src/js/DonutMaker.js";
 
-const newDonutMaker = new DonutMaker();
+let newDonutMaker = new DonutMaker();
 
 const updatePlayerInfo = function (donutMaker) {
     const donuts = document.querySelector(".donut-count");
@@ -43,6 +43,7 @@ const buyClickers = document.querySelector(".clicker-button");
 buyClickers.addEventListener("click", () => {
     newDonutMaker.purchaseAutoClicker();
     newDonutMaker.activateAutoClickers();
+    newDonutMaker.automaticallyClick();
     updatePlayerInfo(newDonutMaker);
 });
 
@@ -54,14 +55,13 @@ buyMultipliers.addEventListener("click", () => {
 
 const resetGame = document.querySelector(".reset-button");
 resetGame.addEventListener("click", () => {
-    if(confirm("Are you sure you want to reset your progress?")) {
-        donutMaker.retrieveDonutCount=0;
-        donutMaker.autoClickerCost=100;
-        donutMaker.retrieveAutoClickerCount=0;
-        donutMaker.donutMultiplierCost=10;
-        donutMaker.retrieveDonutMultiplierCount=0;
-        donutMaker.clickValue=1;
-        updatePlayerInfo();
+    if(confirm("Heck this! I'm outta here!")) {
+        newDonutMaker._donutCount = 0;
+        newDonutMaker._autoClickerCount = 0;
+        newDonutMaker._autoClickerCost = 100;
+        newDonutMaker._donutMultiplierCount = 0;
+        newDonutMaker._donutMuliplierCost = 10;
+        updatePlayerInfo(newDonutMaker);
     } else {
         return null;
     }

@@ -57,15 +57,27 @@ class DonutMaker {
     activateAutoClickers() {
         if (this._donutMultiplierCount >= 1) {
             this._donutCount += (Math.pow(1.2, this._donutMultiplierCount)) * this._autoClickerCount;
+            // const autoClick = document.querySelector(".donut-button");
+
+            // setInterval(function(){
+            // autoClick.click();
+            // },3000);
         } else {
             this._donutCount += this._autoClickerCount;
+           
+            }
         }
-        const autoClick = document.querySelector(".donut-button");
 
-        setInterval(function(){
-        autoClick.click();
-        },3000);
+    automaticallyClick() {
+        if(this._autoClickerCount > 0){
+            const autoClick = document.querySelector(".donut-button");
+
+            setInterval(function(){
+            autoClick.click();
+            },3000);
         }
+    }
+      
 
     purchaseDonutMultiplier() {
         if (this._donutCount < this._donutMultiplierCost) {
