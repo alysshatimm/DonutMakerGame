@@ -70,6 +70,7 @@ body {
       margin: 15px;
       justify-content: center;
       align-items: center;
+      min-height: calc(100vh - 30px);
      
   }
 
@@ -99,4 +100,5 @@ body {
     color: white;
     text-align: center;
     padding-top: 10px;
+    height: 30px;
   }
