@@ -62,6 +62,14 @@ body {
     display: block;
   }
 
+  .reset-button{
+      float: right;
+      border-radius: 5px;
+      align-items: center;
+      height: 50px;
+      width: 100px;
+  }
+
   .container{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

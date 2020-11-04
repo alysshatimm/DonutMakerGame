@@ -44,6 +44,19 @@ aside, footer{
     opacity: .8;
 }
 
+.reset-button{
+    font-family: 'VT323', monospace;
+    background-color: rgba(216, 94, 179, 0.904);
+    font-size: 20px;
+    color: white;
+}
+
+.reset-button:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+
+}
+
 .clicker-button:disabled {
     background: #797373a2;
     border-radius: 20%;

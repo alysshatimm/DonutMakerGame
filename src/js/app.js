@@ -27,6 +27,8 @@ const updatePlayerInfo = function (donutMaker) {
     disableAutoClickerButton(donutMaker);
 
     disableDonutMultiplierButton(donutMaker);
+
+    
 };
 
 updatePlayerInfo(newDonutMaker);
@@ -50,6 +52,21 @@ buyMultipliers.addEventListener("click", () => {
     updatePlayerInfo(newDonutMaker);
 });
 
+const resetGame = document.querySelector(".reset-button");
+resetGame.addEventListener("click", () => {
+    if(confirm("Are you sure you want to reset your progress?")) {
+        donutMaker.retrieveDonutCount=0;
+        donutMaker.autoClickerCost=100;
+        donutMaker.retrieveAutoClickerCount=0;
+        donutMaker.donutMultiplierCost=10;
+        donutMaker.retrieveDonutMultiplierCount=0;
+        donutMaker.clickValue=1;
+        updatePlayerInfo();
+    } else {
+        return null;
+    }
+});
+
 function disableAutoClickerButton(donutMaker){
     const autoClickerButton = document.querySelector(".clicker-button");
     autoClickerButton.disabled = true;
@@ -69,3 +86,4 @@ function disableDonutMultiplierButton(donutMaker){
         donutMultiplierButton.disabled = false;
     }
 }
+

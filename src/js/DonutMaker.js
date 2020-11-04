@@ -60,7 +60,12 @@ class DonutMaker {
         } else {
             this._donutCount += this._autoClickerCount;
         }
-    }
+        const autoClick = document.querySelector(".donut-button");
+
+        setInterval(function(){
+        autoClick.click();
+        },3000);
+        }
 
     purchaseDonutMultiplier() {
         if (this._donutCount < this._donutMultiplierCost) {
