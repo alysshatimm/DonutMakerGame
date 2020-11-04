@@ -21,6 +21,9 @@ const updatePlayerInfo = function (donutMaker) {
     const multiplierCost = document.querySelector(".multiplier-cost");
     multiplierCost.innerText = `Donut Multiplier Costs ${donutMaker.donutMultiplierCost} donuts to purchase`;
 
+    const clickValue = document.querySelector(".click-value");
+    clickValue.innerText = `Cha-CHING! Each click is worth ${(donutMaker.retrieveDonutMultiplierCount * 1.2) + (donutMaker.retrieveAutoClickerCount)} donuts.`
+
     disableAutoClickerButton(donutMaker);
 
     disableDonutMultiplierButton(donutMaker);
