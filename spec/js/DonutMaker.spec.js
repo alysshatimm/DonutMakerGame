@@ -1,3 +1,5 @@
+import {DonutMaker} from "../../src/js/DonutMaker.js"
+
 describe('Feature: Have a way to count donuts', () => {
     describe('Can add to donut count', () => {
         let underTest;

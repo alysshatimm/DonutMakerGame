@@ -42,6 +42,7 @@ resetGame.addEventListener("click", () => {
         newDonutMaker._autoClickerCost = 100;
         newDonutMaker._donutMultiplierCount = 0;
         newDonutMaker._donutMultiplierCost = 10;
+        newDonutMaker.automaticallyClick();
         console.log(newDonutMaker.retrieveAutoClickerCount);
         updatePlayerInfo(newDonutMaker);
     } else {
@@ -89,4 +90,9 @@ function disableDonutMultiplierButton(donutMaker){
         donutMultiplierButton.disabled = false;
     }
 }
+
+setInterval(function(){
+    newDonutMaker.activateAutoClickers();
+    updatePlayerInfo(newDonutMaker)
+    },2000);
 

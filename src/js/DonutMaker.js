@@ -67,15 +67,17 @@ class DonutMaker {
     automaticallyClick() {
         if(this._autoClickerCount >= 1){
             const autoClick = document.querySelector(".donut-button");
-
-            setInterval(function(){
-            autoClick.click();
-            },3000);
+            
         } else if(this._autoClickerCount === 0){
-            clearInterval(autoClick);
+            const autoClick = document.querySelector(".donut-button");
+            clearInterval(function(){
+                autoClick.click();
+            });
         }
+
     }
-      
+     
+
 
     purchaseDonutMultiplier() {
         if (this._donutCount < this._donutMultiplierCost) {
