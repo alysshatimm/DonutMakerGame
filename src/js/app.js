@@ -22,7 +22,7 @@ const updatePlayerInfo = function (donutMaker) {
     multiplierCost.innerText = `Donut Multiplier Costs ${donutMaker.donutMultiplierCost} donuts to purchase`;
 
     const clickValue = document.querySelector(".click-value");
-    clickValue.innerText = `Cha-CHING! Each click is worth ${(donutMaker.retrieveDonutMultiplierCount * 1.2) + (donutMaker.retrieveAutoClickerCount)} donuts`
+    clickValue.innerText = `Cha-CHING! Each click is worth ${(donutMaker.retrieveDonutMultiplierCount * 1.2) + donutMaker.retrieveAutoClickerCount} donuts`
 
     disableAutoClickerButton(donutMaker);
 
@@ -42,7 +42,6 @@ resetGame.addEventListener("click", () => {
         newDonutMaker._autoClickerCost = 100;
         newDonutMaker._donutMultiplierCount = 0;
         newDonutMaker._donutMultiplierCost = 10;
-        newDonutMaker.automaticallyClick();
         console.log(newDonutMaker.retrieveAutoClickerCount);
         updatePlayerInfo(newDonutMaker);
     } else {
