@@ -28,7 +28,8 @@ const updatePlayerInfo = function (donutMaker) {
 
     disableDonutMultiplierButton(donutMaker);
 
-    
+    // activateSprinkleBooster(donutMaker);
+
 };
 
 updatePlayerInfo(newDonutMaker);
@@ -36,7 +37,7 @@ const makeDonuts = document.querySelector(".donut-button");
 
 const resetGame = document.querySelector(".reset-button");
 resetGame.addEventListener("click", () => {
-    if(confirm("Heck this! I'm outta here!")) {
+    if(confirm("Do you really wanna hang up your apron?")) {
         newDonutMaker._donutCount = 0;
         newDonutMaker._autoClickerCount = 0;
         newDonutMaker._autoClickerCost = 100;
@@ -68,6 +69,12 @@ buyMultipliers.addEventListener("click", () => {
     updatePlayerInfo(newDonutMaker);
 });
 
+const sprinkleBoost = document.querySelector(".sprinkle-booster");
+sprinkleBoost.addEventListener("click", () =>{
+    newDonutMaker.sprinkleBooster();
+    updatePlayerInfo(newDonutMaker);
+})
+
 
 
 function disableAutoClickerButton(donutMaker){
@@ -90,9 +97,13 @@ function disableDonutMultiplierButton(donutMaker){
     }
 }
 
+
+
 setInterval(function(){
     newDonutMaker.activateAutoClickers();
     updatePlayerInfo(newDonutMaker)
     },1000);
+
+
 
 

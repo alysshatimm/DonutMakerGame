@@ -76,8 +76,6 @@ class DonutMaker {
         }
 
     }
-     
-
 
     purchaseDonutMultiplier() {
         if (this._donutCount < this._donutMultiplierCost) {
@@ -90,7 +88,15 @@ class DonutMaker {
             this._donutMultiplierCost += .1 * this._donutMultiplierCost;
         }
     }
+
+    sprinkleBooster() {
+        if (this._autoClickerCount % 5 == 0 && this._autoClickerCount > 0){
+            this._donutCount += Math.floor(Math.random() * 10) + 1;
+        }
+    }
 }
+
+
 
 export { DonutMaker }
 

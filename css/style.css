@@ -51,10 +51,22 @@ aside, footer{
     color: white;
 }
 
+.sprinkle-booster{
+    font-family: 'VT323', monospace;
+    background-color: rgba(216, 94, 179, 0.904);
+    font-size: 30px;
+    color: white; 
+}
+
+.sprinkle-booster:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+}
+
+
 .reset-button:hover{
     box-shadow: 0 0 20px gray;
     border-radius: 20%;
-
 }
 
 .clicker-button:disabled {
