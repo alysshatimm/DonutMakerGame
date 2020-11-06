@@ -23,10 +23,6 @@ describe('Feature: Be able to purchase the first Auto Clicker with 100 Donuts', 
     beforeEach(() =>{
         underTest = new DonutMaker;   
     })
-
-    it('Can retrieve an Auto Clicker count', () =>{
-        underTest.retrieveAutoClickerCount();
-    })
     it('Can add to the Auto Clicker count', () => {
         underTest._donutCount = 100;
         underTest.purchaseAutoClicker();
@@ -47,19 +43,16 @@ describe('Feature: The cost of each Auto Clicker will go up with each purchase',
     })
 
     it ('Will increase the cost of the second Auto Clicker by 10%', () =>{
+        underTest._donutCount = 200;
+        underTest._autoClickerCount = 1;
         underTest.purchaseAutoClicker();
         expect(underTest._autoClickerCost).toBe(110);
     })
     it ('Will increase each additional Auto Clicker cost another 10%', () =>{
+        underTest._donutCount = 300;
         underTest.purchaseAutoClicker();
         underTest.purchaseAutoClicker();
         expect(underTest._autoClickerCost).toBe(121);
-    })
-    it ('Will increase each additional Auto Clicker cost yet another 10%', () =>{
-        underTest.purchaseAutoClicker();
-        underTest.purchaseAutoClicker();
-        underTest.purchaseAutoClicker();
-        expect(underTest._autoClickerCost).toBe(133.1);
     })
     it('Will not sell an Auto Clicker if not enough donuts banked', () =>{
         underTest._donutCount = 50;

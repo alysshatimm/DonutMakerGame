@@ -93,5 +93,6 @@ function disableDonutMultiplierButton(donutMaker){
 setInterval(function(){
     newDonutMaker.activateAutoClickers();
     updatePlayerInfo(newDonutMaker)
-    },2000);
+    },1000);
+
 
