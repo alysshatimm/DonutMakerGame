@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=VT323&display=swap');
+h1, h2, h3 {
+    font-family: 'VT323', monospace;
+}
+body{
+    background-image: url("/src/img/sprinkle.png");
+    background-size: cover;
+    
+}
+
+header{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+aside, footer{
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+.left, .right{
+    background-color: rgb(223, 179, 233);
+    border-radius: 10px;
+    border: 10px;
+}
+
+.center{
+    background-color: rgb(154, 218, 230);
+    border-radius: 10px;
+}
+
+.donut-button:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+    opacity: .8;
+}
+.clicker-button:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+    opacity: .8;
+}
+.multiplier-button:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+    opacity: .8;
+}
+
+.reset-button{
+    font-family: 'VT323', monospace;
+    background-color: rgba(216, 94, 179, 0.904);
+    font-size: 20px;
+    color: white;
+}
+
+.sprinkle-booster{
+    font-family: 'VT323', monospace;
+    background-color: rgba(216, 94, 179, 0.904);
+    font-size: 30px;
+    color: white; 
+}
+
+.sprinkle-booster:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+}
+
+
+.reset-button:hover{
+    box-shadow: 0 0 20px gray;
+    border-radius: 20%;
+}
+
+.clicker-button:disabled {
+    background: #797373a2;
+    border-radius: 20%;
+    
+}
+
+.multiplier-button:disabled {
+    background: #797373a2;
+    border-radius: 20%;
+    
+}

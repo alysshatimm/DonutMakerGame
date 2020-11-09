@@ -6,9 +6,9 @@ let newDonutMaker = new DonutMaker();
 
 const updatePlayerInfo = function (donutMaker) {
     const donuts = document.querySelector(".donut-count");
-    donuts.innerText = `YOU'VE BAKED ${donutMaker.retrieveDonutCount} DONUTS!`;
-
-
+    donuts.innerText = `YOU'VE BAKED ${donutMaker.retrieveDonutCount} DONUTS!`; 
+    // refactor "retrieveDonutCount" to just "donutCount" in future iteration if time
+    
     const clickers = document.querySelector(".auto-clicker-count");
     clickers.innerText = `YOU HAVE ${donutMaker.retrieveAutoClickerCount} AUTO-CLICKERS`;
 
@@ -16,7 +16,7 @@ const updatePlayerInfo = function (donutMaker) {
     multipliers.innerText = `YOU HAVE ${donutMaker.retrieveDonutMultiplierCount} DONUT MULTIPLIERS`;
 
     const clickerCost = document.querySelector(".clicker-cost");
-    clickerCost.innerText = `Auto-Clicker Costs ${donutMaker.autoClickerCost} donuts to purchase`;
+    clickerCost.innerText= `Auto-Clicker Costs ${donutMaker.autoClickerCost} donuts to purchase`;
 
     const multiplierCost = document.querySelector(".multiplier-cost");
     multiplierCost.innerText = `Donut Multiplier Costs ${donutMaker.donutMultiplierCost} donuts to purchase`;
@@ -28,7 +28,7 @@ const updatePlayerInfo = function (donutMaker) {
 
     disableDonutMultiplierButton(donutMaker);
 
-
+    // activateSprinkleBooster(donutMaker);
 
 };
 
@@ -37,7 +37,7 @@ const makeDonuts = document.querySelector(".donut-button");
 
 const resetGame = document.querySelector(".reset-button");
 resetGame.addEventListener("click", () => {
-    if (confirm("Do you really wanna hang up your apron?")) {
+    if(confirm("Do you really wanna hang up your apron?")) {
         newDonutMaker._donutCount = 0;
         newDonutMaker._autoClickerCount = 0;
         newDonutMaker._autoClickerCost = 100;
@@ -70,39 +70,39 @@ buyMultipliers.addEventListener("click", () => {
 });
 
 const sprinkleBoost = document.querySelector(".sprinkle-booster");
-sprinkleBoost.addEventListener("click", () => {
+sprinkleBoost.addEventListener("click", () =>{
     newDonutMaker.sprinkleBooster();
     updatePlayerInfo(newDonutMaker);
 })
 
 
 
-function disableAutoClickerButton(donutMaker) {
+function disableAutoClickerButton(donutMaker){
     const autoClickerButton = document.querySelector(".clicker-button");
     autoClickerButton.disabled = true;
-    if (donutMaker.autoClickerCost > donutMaker.retrieveDonutCount) {
+    if(donutMaker.autoClickerCost > donutMaker.retrieveDonutCount){
         autoClickerButton.disabled = true;
-    } else if (donutMaker.autoClickerCost <= donutMaker.retrieveDonutCount) {
+    } else if(donutMaker.autoClickerCost <= donutMaker.retrieveDonutCount){
         autoClickerButton.disabled = false;
     }
 }
 
-function disableDonutMultiplierButton(donutMaker) {
+function disableDonutMultiplierButton(donutMaker){
     const donutMultiplierButton = document.querySelector(".multiplier-button");
     donutMultiplierButton.disabled = true;
-    if (donutMaker.donutMultiplierCost > donutMaker.retrieveDonutCount) {
+    if(donutMaker.donutMultiplierCost > donutMaker.retrieveDonutCount){
         donutMultiplierButton.disabled = true;
-    } else if (donutMaker.donutMultiplierCost <= donutMaker.retrieveDonutCount) {
+    } else if(donutMaker.donutMultiplierCost <= donutMaker.retrieveDonutCount){
         donutMultiplierButton.disabled = false;
     }
 }
 
 
 
-setInterval(function () {
+setInterval(function(){
     newDonutMaker.activateAutoClickers();
     updatePlayerInfo(newDonutMaker)
-}, 1000);
+    },1000);
 
 
 

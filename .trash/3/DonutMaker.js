@@ -57,20 +57,20 @@ class DonutMaker {
     activateAutoClickers() {
         if (this._donutMultiplierCount >= 1) {
             this._donutCount += (Math.pow(1.2, this._donutMultiplierCount)) * this._autoClickerCount;
-
+           
         } else {
             this._donutCount += this._autoClickerCount;
-
+           
+            }
         }
-    }
 
     automaticallyClick() {
-        if (this._autoClickerCount >= 1) {
+        if(this._autoClickerCount >= 1){
             const autoClick = document.querySelector(".donut-button");
-
-        } else if (this._autoClickerCount === 0) {
+            
+        } else if(this._autoClickerCount === 0){
             const autoClick = document.querySelector(".donut-button");
-            clearInterval(function () {
+            clearInterval(function(){
                 autoClick.click();
             });
         }
@@ -90,7 +90,7 @@ class DonutMaker {
     }
 
     sprinkleBooster() {
-        if (this._autoClickerCount % 5 == 0 && this._autoClickerCount > 0) {
+        if (this._autoClickerCount % 5 == 0 && this._autoClickerCount > 0){
             this._donutCount += Math.floor(Math.random() * 10) + 1;
         }
     }
